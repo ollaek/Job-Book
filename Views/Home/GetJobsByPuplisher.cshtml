@@ -1,0 +1,58 @@
+﻿@model IEnumerable<Job_Book.Models.ApplyforJob>
+
+@{
+    ViewBag.Title = "GetJobsByPuplisher";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Job.JobTitle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MobilePhone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.User.UserName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Message)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ApplyDate)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Job.JobTitle)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.MobilePhone)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.User.UserName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Message)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.ApplyDate)
+    </td>
+    <td>
+
+
+        @Html.ActionLink("Delete", "DeleteOfJob", new { id = item.id })
+    </td>
+</tr>
+}
+
+</table>

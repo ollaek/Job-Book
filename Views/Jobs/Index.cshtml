@@ -1,0 +1,55 @@
+﻿@model IEnumerable<Job_Book.Models.Job>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table table-bordered table-hover table-striped " style=" background-color :black" >
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.JobTitle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.JobContent)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.JobImage)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CategoryId)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.JobTitle)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.JobContent)
+        </td>
+        <td>
+          <img src="~/Uploads/@Html.DisplayFor(model=> item.JobImage)"  class="thumbnail" style="width:48px ; height:48px" />
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CategoryId)
+        </td>
+        <td>
+            <a href="~/Views/Jobs/Index.cshtml"></a>
+
+            @Html.ActionLink("Details", "Details", new { id = item.id })
+            @Html.ActionLink("Delete", "Delete", new { id = item.id })
+          
+
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,118 @@
+﻿.navbar-default {
+    background-color: #3498db;
+    margin-bottom: 90px;
+}
+
+    .navbar-default .navbar-nav > li > a {
+        color: #f5eeee;
+        font-family: Arial, Helvetica, sans-serif;
+        height: 70px;
+        padding-top: 20pt;
+        font-size: 11pt;
+    }
+
+        .navbar-default .navbar-nav > li > a:hover {
+            color: #2c3e50;
+        }
+
+.Myfooter {
+    background-color: #3498db;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: justify;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    font-size: larger;
+}
+
+
+body {
+    padding-top: 50px;
+    background-color: #ecf0f1;
+}
+
+.Myfooter a, p {
+    color: #2c3e50;
+}
+
+
+.subfooter {
+    background-color: #ecf0f1;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #2c3e50;
+    padding: 10px;
+    text-align: center;
+}
+
+.Myfooter, ul, h3 {
+    margin-bottom: 10px;
+}
+
+#SearchName {
+    width: 130px;
+    border: 2px solid #ccc;
+    border-radius: 3px;
+    background-color: white;
+    background-repeat: no-repeat;
+    padding: 7px;
+    background-position: 5px 5px;
+    margin-top: 15px;
+    transition: width 0.4s ease-in-out;
+}
+
+    #SearchName:focus {
+        width: 100%;
+    }
+
+#navbar user {
+    padding: 100px;
+    padding-bottom: 0px;
+    width: 350px;
+}
+
+.img-size
+{
+    font-size:70px;
+}
+
+.navbar-user{
+    padding:10px;
+    padding-bottom:0px ;
+    width : 300px ;
+
+}
+.p, h1, h2, h3, h4, h5, h6, label {
+    color: #2c3e50;
+}
+.dl, dt, dd {
+    color: #2c3e50;
+}
+
+.table
+{
+    background-color : black;
+}
+    .table ::after {
+        background-color: black;
+    }
+.td, th , tr
+{
+    color: #2d53cc;
+    font-size : 12pt ;
+}
+
+.formHeader {
+    text-align: center;
+    font-weight:bold;
+}
+
+.dialogForm {
+    border-radius: 25px;
+    background: white;
+    padding: 20px;
+    box-shadow: 2px 2px #bdc3c7;
+
+}
+
+

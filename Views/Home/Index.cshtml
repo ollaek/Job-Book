@@ -1,0 +1,37 @@
+﻿
+@model IEnumerable<Job_Book.Models.Job>
+
+@{
+    ViewBag.Title = "Home Page";
+}
+<br />
+
+<div class="jumbotron">
+    <h1>Carrery for fresh graduates</h1>
+    <p style="color: black" class="lead"> This site lead to prograamin Jobs for Fresh graduates, So you Can find your Job And You Can publish Advertisment iF You are Publisher , You Can Apply to Job if You Are Fresh graduate </p>
+    <p><a href="~/Account/Register" class="btn btn-info btn-lg">Register &raquo;</a></p>
+    <p><a href="~/Account/Login" class="btn btn-info btn-lg">Login &raquo;</a></p>
+</div>
+<div style="color: #2c3e50"
+  >
+    <h1 style="font-family: Arial, Helvetica, sans-serif;">Programming Jobs</h1>
+    <hr />
+
+</div>
+
+    <div class="row">
+        @foreach (var subitem in Model)
+        {
+
+        <div class="col-md-3" style="margin-left:20px ; margin-bottom:20px ;  ">
+         
+            <img style="width:200px ; height:200px" src="~/Uploads/@Html.DisplayFor(modelItem => subitem.JobImage)" />
+            <h3 style="color :white"> @Html.DisplayFor(modelItem => subitem.JobTitle)</h3>
+            <h5 style="color:white"> @Html.DisplayFor(modelItem => subitem.JobContent)</h5>
+            @Html.ActionLink("Details", "Details", new { JobId = subitem.id }, new { @class ="btn btn-primary"})
+        </div>
+        }
+
+    </div>
+
+

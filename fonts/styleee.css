@@ -1,0 +1,65 @@
+﻿.navbar-default {
+    background-color: #002646;
+    border-color: #f5f5f5;
+    margin-bottom: 90px;
+}
+
+    .navbar-default .navbar-nav > li > a {
+        color: #f5eeee;
+        font-family: 'Arial Unicode MS';
+        height: 70px;
+        padding-top: 20pt;
+        font-size: 11pt;
+    }
+
+        .navbar-default .navbar-nav > li > a:hover {
+            color: #fff;
+        }
+
+.Myfooter {
+    background-color: cornflowerblue;
+    font-family: 'Arial Unicode MS';
+    text-align: justify;
+}
+
+.Myfooter {
+    font-size: larger;
+}
+
+body {
+    padding-top: 50px;
+}
+
+.Myfooter a, p {
+    color: azure;
+}
+
+
+.subfooter {
+    background-color: #002646;
+    font-family: Algerian;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+.Myfooter ,ul, h3 {
+    margin-bottom: 10px;
+}
+#SearchName {
+    width: 130px;
+    border: 2px solid #ccc;
+    border-radius: 3px;
+    background-color: white;
+    background-repeat:no-repeat;
+  padding : 7px ;
+    background-position :5px 5px;
+ margin-top : 15px;
+    transition:width  0.4s ease-in-out;
+}
+
+#SearchName:focus
+{
+    width:100% ;
+}
+.img

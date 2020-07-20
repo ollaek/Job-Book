@@ -1,0 +1,99 @@
+﻿@using Microsoft.AspNet.Identity
+@using Job_Book.Models;
+@if (Request.IsAuthenticated)
+{
+
+    using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "Logoff" }))
+    {
+
+        var db = new ApplicationDbContext();
+        var UserID = User.Identity.GetUserId();
+        var CurrentUser = db.Users.Where(a => a.Id == UserID).SingleOrDefault();
+
+        @Html.AntiForgeryToken()
+        <ul class="nav  navbar-nav  navbar-right affix " style="margin-left:1100px">
+            <li class=" dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    <span class="glyphicon glyphicon-user"> </span>
+                    <strong> Hello : @CurrentUser.UserName  </strong>
+                    <span class="glyphicon glyphicon-chevron-down"></span>
+
+                </a>
+                <ul class="dropdown-menu">
+                    <li>
+                        <div class="navbar-user">
+                            <div class="row">
+                                <div class="col-lg-8 col-lg-offset-2">
+
+
+                                    @if (CurrentUser.UserType == "publisher")
+                                    {
+
+                                        <a href="~/Home/GetJobsByPuplisher" class=" btn btn-success btn-block "> Published Jobs</a>
+
+
+                                        <a href="~/Jobs/Create" class=" btn btn-info btn-block "> Create Job</a>
+
+                                        <a href="~/Home/GetJobsbyOnlyExistpublisher" class=" btn btn-info btn-block "> My Advertsing Jobs</a>
+                                    }
+
+
+
+
+                                    else
+                                    {
+                                        <a href="~/Home/GetJobsByUsers" class=" btn btn-success btn-block "> Applied Jobs</a>
+                                    }
+                                    <a href="~/Account/Editprofile" class="btn btn-primary btn-block  "> Edit Profile</a>
+
+
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </li>
+                    <li class="divider"> </li>
+                    <li>
+                        <div>
+                            <div class="row">
+
+                                <div class="col-lg-4 col-lg-offset-4">
+                                    <p>
+                                        <a href="javascript:document.getElementById('Logoff').submit()" class=" btn btn-danger "> Logout </a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                </ul>
+            </li>
+        </ul>
+        @*<li> @Html.ActionLink("  Welcome :" + User.Identity.GetUserName(), "Index", "Manage")
+                 <a href="javascript:document.getElementById('Logoff').submit()"> Logout </a>
+            </li>*@
+
+
+    }
+}
+
+else
+{
+    <ul class="nav navbar-nav navbar-right " style="margin-left:500px">
+
+        <li>
+            <a href="~/Account/Register">
+                <i class="glyphicon glyphicon-user"></i>
+                Sign Up
+            </a>
+        </li>
+        <li>
+            <a href="~/Account/Login">
+                <i class="glyphicon glyphicon-lock">
+                </i> Login
+            </a>
+        </li>
+
+    </ul>
+}
